@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "basics/4a-date-with-package.proto";
+
+// Example of package
+package person;
+
+message Person {
+  int32 age = 1;
+  string first_name = 2;
+  string last_name = 3;
+
+  // Getting Date value from package for person's birthday
+  my.date.Date birthday = 4;
+}
