@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package easy.example;
+
+message ExampleMessage {
+  int32 id = 1;
+  string name = 2;
+}

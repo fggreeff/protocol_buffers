@@ -1,0 +1,31 @@
+/*
+Comments have been removed in order to focus on the concept of importing and
+nesting
+*/
+syntax = "proto3";
+
+// Example of importing a (date) file
+import "basics/3a-date.proto";
+
+message Person { // level 0
+  int32 age = 1;
+  string first_name = 2;
+  repeated string phone_numbers = 3;
+
+  // Date is imported
+  Date birthday = 4;
+
+  // Example of nested messages
+  // we define the type BloodType within Person (full name is Person.BloodType)
+  message BloodType { // level 1
+    string name = 1;
+    bool is_donar = 2;
+
+    message DNA { // level 2
+      string name = 1;
+      string structure = 2;
+    }
+    DNA dna = 5;
+  }
+  BloodType blood_type = 6;
+}
